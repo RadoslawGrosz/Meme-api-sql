@@ -15,20 +15,22 @@ public class Image {
     private String urlMedium;
     private String urlBig;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "ID_MEME")
-//    private Meme meme;
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "ID_MEME")
+    private Meme meme;
 
     public Image(@JsonProperty("id") Long id,
                  @JsonProperty("name") String name,
                  @JsonProperty("urlSmall") String urlSmall,
                  @JsonProperty("urlMedium") String urlMedium,
-                 @JsonProperty("urlBig") String urlBig) {
+                 @JsonProperty("urlBig") String urlBig,
+                 @JsonProperty("meme") Meme meme) {
         this.id = id;
         this.name = name;
         this.urlSmall = urlSmall;
         this.urlMedium = urlMedium;
         this.urlBig = urlBig;
+        this.meme = meme;
     }
 
     public Image() {

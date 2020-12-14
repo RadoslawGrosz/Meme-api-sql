@@ -27,13 +27,14 @@ public class Start {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-        
-        User newUser = new User((long) 123, "admin", "admin", "admin");
-        Image newImage = new Image((long) 123, "imageName", "url1", "url2", "url3");
-        userRepo.save(newUser);
+
+        Image newImage = new Image((long) 123, "imageName", "url1", "url2", "url3", null);
         imageRepo.save(newImage);
+        User newUser = new User((long) 123, "admin", "admin", "admin");
+        userRepo.save(newUser);
 
         Meme newMeme = new Meme((long) 123, "title1", "desc", null, null);
+
         Optional<User> optionalUser = userRepo.findByUsername("admin");
         Optional<Image> optionalImage = imageRepo.findByName("imageName");
 
