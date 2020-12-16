@@ -22,6 +22,11 @@ public class ImageController {
         return imageService.addImage(image);
     }
 
+    @PostMapping("/delete/{id}")
+    public Long deleteImage(@PathVariable Long id) {
+        return imageService.deleteImage(id);
+    }
+
     @GetMapping("/get")
     public Iterable<Image> getImages() {
         return imageService.getImages();

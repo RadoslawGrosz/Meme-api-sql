@@ -13,11 +13,11 @@ public class Meme {
     private String description;
 
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "ID_IMAGE")
+    @JoinColumn(name = "ID_IMAGE", nullable = true)
     private Image image;
 
     @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "ID_USER")
+    @JoinColumn(name = "ID_USER", nullable = true)
     private User user;
 
     public Meme(@JsonProperty("id") Long id,

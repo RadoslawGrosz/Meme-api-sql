@@ -17,9 +17,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/addUser")
+    @PostMapping("/add")
     public void addUser(@RequestBody User user) {
         userService.addUser(user);
+    }
+
+    @PostMapping("/delete/{id}")
+    public Long deleteUser(@PathVariable Long id) {
+        return userService.deleteUser(id);
     }
 
     @PostMapping("/login")

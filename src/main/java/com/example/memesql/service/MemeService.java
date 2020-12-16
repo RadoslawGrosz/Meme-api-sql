@@ -19,6 +19,16 @@ public class MemeService {
         return memeRepo.save(meme).getId();
     }
 
+    public Long deleteMeme(Long id) {
+        try {
+            memeRepo.deleteById(id);
+            return id;
+        } catch (Exception e) {
+            System.out.println("error while deleting meme");
+            return (long) -1;
+        }
+    }
+
     public Iterable<Meme> getMemes() {
         return memeRepo.findAll();
     };

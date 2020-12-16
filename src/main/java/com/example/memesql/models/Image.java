@@ -16,7 +16,7 @@ public class Image {
     private String urlBig;
 
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "ID_MEME")
+    @JoinColumn(name = "ID_MEME", nullable = true)
     private Meme meme;
 
     public Image(@JsonProperty("id") Long id,

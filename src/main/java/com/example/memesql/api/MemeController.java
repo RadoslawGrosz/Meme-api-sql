@@ -22,6 +22,11 @@ public class MemeController {
         return memeService.addMeme(meme);
     }
 
+    @PostMapping("/delete/{id}")
+    public Long deleteMeme(@PathVariable Long id) {
+        return memeService.deleteMeme(id);
+    }
+
     @GetMapping("/get")
     public Iterable<Meme> getMemes() {
         return memeService.getMemes();

@@ -26,6 +26,17 @@ public class UserService {
         userRepo.save(user);
     }
 
+    public Long deleteUser(Long id) {
+        try {
+            userRepo.deleteById(id);
+            return id;
+        } catch (Exception e) {
+            System.out.println("error while deleting user");
+            return (long) -1;
+        }
+
+    }
+
     public User logIn(String token) throws UsernameNotFoundException {
 
         String base64Credentials = token.substring("Basic".length()).trim();

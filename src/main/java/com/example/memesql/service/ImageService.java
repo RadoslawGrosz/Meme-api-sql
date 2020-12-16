@@ -19,6 +19,18 @@ public class ImageService {
         return imageRepo.save(image).getId();
     }
 
+    public Long deleteImage(Long id) {
+
+        try {
+            imageRepo.deleteById(id);
+            return id;
+        } catch (Exception e) {
+            System.out.println("error while deleting image");
+            return (long) -1;
+        }
+
+    }
+
     public Iterable<Image> getImages() {
         return imageRepo.findAll();
     }
