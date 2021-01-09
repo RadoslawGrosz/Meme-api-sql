@@ -12,7 +12,7 @@
     <artifactId>memesql</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>memesql</name>
-    <description>Demo project for Spring Boot</description>
+    <description>API for meme website</description>
 
     <properties>
         <java.version>11</java.version>

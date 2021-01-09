@@ -24,7 +24,8 @@ public class Image {
                  @JsonProperty("urlSmall") String urlSmall,
                  @JsonProperty("urlMedium") String urlMedium,
                  @JsonProperty("urlBig") String urlBig,
-                 @JsonProperty("meme") Meme meme) {
+                 @JsonProperty("meme") Meme meme
+                 ) {
         this.id = id;
         this.name = name;
         this.urlSmall = urlSmall;
